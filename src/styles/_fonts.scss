@@ -1,0 +1,25 @@
+@import url("https://fonts.cdnfonts.com/css/atteron-personal-use");
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("../assets/fonts/Montserrat/static/Montserrat-Regular.ttf")
+      format("ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url("../assets/fonts/Poppins/Poppins-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Atteron";
+  src: local("Atteron"),
+    url("../assets/fonts/Atteron/Atteron.ttf") format("ttf");
+}
+
+$Montserrat: "Montserrat", sans-serif;
+$Poppins: "Poppins", sans-serif;
+$Atteron: "Atteron Personal Use", sans-serif;
+// $Atteron: "Atteron", sans-serif;

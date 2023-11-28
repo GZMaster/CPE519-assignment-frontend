@@ -1,0 +1,13 @@
+@import "./_colors.scss";
+@import "./_breakpoints.scss";
+@import "./_fonts.scss";
+
+.mainpage_container,
+.homepage_container,
+.aboutpage_container,
+.locatepage_container,
+.contactpage_container,
+.optionspage_container {
+  background: $background;
+  padding: 5rem 0 0 0;
+}
