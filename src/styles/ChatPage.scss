@@ -1,0 +1,66 @@
+@import "./_colors.scss";
+@import "./_breakpoints.scss";
+@import "./_fonts.scss";
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+
+  .message {
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
+
+    &.user {
+      align-self: flex-end;
+      background-color: #a8e6cf;
+    }
+
+    &.bot {
+      align-self: flex-start;
+      background-color: #f0f0f0;
+    }
+  }
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+
+  input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}

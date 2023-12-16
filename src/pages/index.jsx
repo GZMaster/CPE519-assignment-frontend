@@ -1,5 +1,7 @@
 import Main from "./Main";
+import ChatPage from "./ChatPage";
+import LoginPage from "./LoginPage";
 
-// export { HomePage, AboutPage, OptionsPage, ContactPage, LocatePage };
+export { ChatPage, LoginPage };
 
 export default Main;
