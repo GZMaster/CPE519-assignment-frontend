@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
     if (token) {
       try {
         // Send a request to the authentication provider's token validation endpoint
-        const res = await fetch(`${backendURL}/api/v1/users/validateToken`, {
+        const res = await fetch(`${backendURL}/users/validateToken`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
 
   const signup = async (name, email, password, passwordConfirm) => {
     // Make API call to signup endpoint
-    const res = await fetch(`${backendURL}/api/v1/users/signup`, {
+    const res = await fetch(`${backendURL}/users/signup`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password, passwordConfirm }),
@@ -78,14 +78,11 @@ const AuthProvider = ({ children }) => {
     const user = userString && JSON.parse(userString);
 
     // Make API call to verify endpoint
-    const res = await fetch(
-      `${backendURL}/api/v1/users/verifyEmail/${user._id}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ otp }),
-      },
-    );
+    const res = await fetch(`${backendURL}/users/verifyEmail/${user._id}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ otp }),
+    });
 
     const response = await res.json();
 
@@ -98,7 +95,7 @@ const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     // Make API call to login endpoint
-    const res = await fetch(`${backendURL}/api/v1/users/login`, {
+    const res = await fetch(`${backendURL}/users/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -127,7 +124,7 @@ const AuthProvider = ({ children }) => {
     const token = localStorage.getItem("jwt");
 
     // Make API call to logout endpoint
-    const response = await fetch(`${backendURL}/api/v1/users/logout`, {
+    const response = await fetch(`${backendURL}/users/logout`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -149,7 +146,7 @@ const AuthProvider = ({ children }) => {
 
   const forgotPassword = async (email) => {
     // Make API call to forgot password endpoint
-    const res = await fetch(`${backendURL}/api/v1/users/forgotPassword`, {
+    const res = await fetch(`${backendURL}/users/forgotPassword`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
@@ -172,7 +169,7 @@ const AuthProvider = ({ children }) => {
   const resetPassword = async (password, passwordConfirm, restToken) => {
     // Make API call to reset password endpoint
     const res = await fetch(
-      `${backendURL}/api/v1/users/resetPassword/${restToken}`,
+      `${backendURL}/users/resetPassword/${restToken}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

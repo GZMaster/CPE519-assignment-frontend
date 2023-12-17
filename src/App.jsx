@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+import AuthProvider from "./services/authentication/AuthProvider";
 import { AuthContext } from "./services/authentication/AuthContext";
 // import { Navbar, Footer } from "./components";
 import "./styles/App.scss";
@@ -15,10 +16,10 @@ export default function App() {
   }, [isLoggedIn, navigate]);
 
   return (
-    <div className="App">
+    <AuthProvider>
       {/* <Navbar /> */}
       <Outlet />
       {/* <Footer /> */}
-    </div>
+    </AuthProvider>
   );
 }
